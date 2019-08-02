@@ -63,4 +63,8 @@ export default function() {
       return { data: rentals };
     }
   });
+    // Find and return the provided rental from our rental list above
+  this.get('/rentals/:id', function (db, request) {
+    return { data: rentals.find((rental) => request.params.id === rental.id) };
+  });
 }
